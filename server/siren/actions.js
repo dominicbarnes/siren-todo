@@ -8,7 +8,7 @@ exports.add = function () {
     method: 'POST',
     href: '/',
     fields: [
-      { name: 'item', type: 'text' }
+      { name: 'title', type: 'text' }
     ]
   }
 };
@@ -54,6 +54,6 @@ exports.clear = function () {
     name: 'clear-completed',
     title: 'Clear Completed TODOs',
     method: 'POST',
-    href: '/'
+    href: '/clear'
   }
 };
