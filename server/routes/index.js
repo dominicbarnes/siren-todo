@@ -37,7 +37,7 @@ exports.post = function* () {
   if (!this.session.todos) this.session.todos = [];
   this.session.todos.push(item);
 
-  this.status = 301;
+  this.status = 303;
   this.redirect('/');
 };
 
