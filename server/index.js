@@ -13,7 +13,10 @@ const siren = require('./middleware/siren');
 const app = koa();
 const router = routes(path.resolve(__dirname, './routes'));
 
-app.use(cors({ credentials: true }));
+app.use(cors({
+  allowMethods: [ 'GET', 'HEAD', 'PUT', 'POST', 'PATCH', 'DELETE' ],
+  credentials: true
+}));
 app.use(logger());
 app.use(siren);
 app.keys = [ 'TODO siren' ];
