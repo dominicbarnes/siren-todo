@@ -17,6 +17,7 @@
   "scripts": {
     "start": "node server/index.js",
     "build": "docker build -t dominicbarnes/siren-todo .",
+    "prepush": "npm run build",
     "push": "docker push dominicbarnes/siren-todo"
   }
 }
