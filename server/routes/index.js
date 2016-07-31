@@ -9,7 +9,7 @@ exports.get = function* () {
   const { todos } = this.session;
 
   this.siren({
-    title: 'Your TODOs',
+    title: title(filter),
     entities: [
       Array.isArray(todos) ? filterTodos(todos, filter).map(entities.todo) : null
     ],
@@ -44,6 +44,12 @@ exports.post = function* () {
 function hasCompleted(todos) {
   if (!todos) return false;
   return todos.some(todo => !!todo.completed);
+}
+
+function title(filter) {
+  if (filter === 'active') return 'Your Active TODOs';
+  if (filter === 'completed') return 'Your Completed TODOs';
+  return 'Your TODOs';
 }
 
 function filterTodos(list, filter) {
