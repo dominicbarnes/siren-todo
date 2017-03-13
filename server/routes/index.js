@@ -56,10 +56,7 @@ function filterTodos(list, filter) {
   if (!filter) return list;
 
   return list.filter(function (todo) {
-    if (filter === 'active') {
-      return !todo.completed;
-    } else if (filter === 'completed') {
-      return todo.completed;
-    }
+    if (filter === 'active') return !todo.completed;
+    if (filter === 'completed') return todo.completed;
   });
 }
