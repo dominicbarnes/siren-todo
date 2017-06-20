@@ -10,6 +10,9 @@ exports.get = function* () {
 
   this.siren({
     title: title(filter),
+    properties: {
+      count: Array.isArray(todos) ? filterTodos(todos, filter).length : 0
+    },
     entities: [
       Array.isArray(todos) ? filterTodos(todos, filter).map(entities.todo) : null
     ],
