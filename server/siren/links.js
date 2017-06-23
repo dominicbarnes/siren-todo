@@ -1,26 +1,35 @@
 
 'use strict';
 
-exports.active = function () {
+exports.active = function (self) {
+  let rel = [ 'section' ]
+  if (self) rel.push('self')
+
   return {
-    rel: 'section',
+    rel: rel,
     href: '/?filter=active',
-    title: 'Active TODOs'
+    title: 'Active'
   };
 };
 
-exports.completed = function () {
+exports.completed = function (self) {
+  let rel = [ 'section' ]
+  if (self) rel.push('self')
+
   return {
-    rel: 'section',
+    rel: rel,
     href: '/?filter=completed',
-    title: 'Completed TODOs'
+    title: 'Completed'
   };
 };
 
-exports.all = function () {
+exports.all = function (self) {
+  let rel = [ 'collection' ]
+  if (self) rel.push('self')
+
   return {
-    rel: 'collection',
+    rel: rel,
     href: '/',
-    title: 'All TODOs'
+    title: 'All'
   };
 };

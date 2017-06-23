@@ -17,9 +17,9 @@ exports.get = function* () {
       Array.isArray(todos) ? filterTodos(todos, filter).map(entities.todo) : null
     ],
     links: [
-      filter ? links.all() : null,
-      filter !== 'active' ? links.active() : null,
-      filter !== 'completed' ? links.completed() : null
+      links.all(!filter),
+      links.active(filter === 'active'),
+      links.completed(filter === 'completed')
     ],
     actions: [
       actions.add(),
